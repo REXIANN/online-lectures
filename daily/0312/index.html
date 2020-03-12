@@ -18,6 +18,11 @@
             div > img{
                 max-width: 100%;
             }
+            div::after{
+                content: "";
+                display: block;
+                clear:both;
+            }
             .float-left{
                 float: left;
                 padding: 20px;
@@ -38,7 +43,7 @@
         <div class="float-left">BIKE SHARE</div>
         <div class="float-right">SIGNUP</div>
         <div class="float-right">LOGIN</div>
-        <div class="float-right">ABOUT</div>
+        <div class="float-right">ABOUT</div>    
         
         <div>
             <img id="pic" src="images/bicycles.jpg">
