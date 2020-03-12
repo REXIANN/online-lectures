@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>레이아웃 실습</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <title>레이아웃 실습</title>
+        <style>
+            body{
+                border: 2px solid black;
+            }
+            div{
+                text-align: center;
+            }
+            div > p{
+                font-size: 50px;
+            }
+            div > img{
+                max-width: 100%;
+            }
+            .float-left{
+                float: left;
+                padding: 20px;
+                font-size: 30px;
+                
+            }
+            .float-right{
+                float: right;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #pic{
+                width: 1700px;
+            } 
+        </style>
+    </head>
+    <body>
+        <div class="float-left">BIKE SHARE</div>
+        <div class="float-right">SIGNUP</div>
+        <div class="float-right">LOGIN</div>
+        <div class="float-right">ABOUT</div>
+        
+        <div>
+            <img id="pic" src="images/bicycles.jpg">
+            <p><strong>자전거로 도심을 누벼보세요.</strong></p>
+            <img src="images/commuter.jpg" width="700px">
+        </div>
+            
+    </body>
 </html>
