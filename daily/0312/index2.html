@@ -1,0 +1,37 @@
+<!-- 강사님의 풀이 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link:css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#" class="nav-logo">BIKE SHARE</a>
+        <!-- 클래스를 부여한 이유
+        ul 태그 자체를 선택해 버린다면 다른 ul에도 적용이 되어버린다.
+        div 자체는 의미기ㅏ 없다
+        -->
+        <ul class="nav-items">
+            <li class="nav-item"><a href="#">ABOUT</a></li>
+            <li class="nav-item"><a href="#">LOGIN</a></li>
+            <li class="nav-item"><a href="#">SIGNUP</a></li>
+        </ul>
+    </nav>
+    <!-- 모든요소의 높이는 컨텐츠영역+자식 높이 -->
+    <section class="cover">
+        <h1 class="cover-title">자전거로 도심을 누벼보세요</h1>
+    </section>
+    <section class="content">
+        <h2>자전거로 도심을 누벼보세요</h2>
+        <img src='images/commuter.jpg' alt="자전거 타는 사람 있음">
+    </section>
+    
+</body>
+</html>
+<!-- emmet: nav+tab, ul>li*3 + tab, a+ul>li*3 + tab -->
+<!-- a_ul.nav-items>li.nav-item*3 + tab(클래스도 도잇에 같이 지정이 가능) -->
+<!-- +: 인접, >: 자식. *: 갯수 -->

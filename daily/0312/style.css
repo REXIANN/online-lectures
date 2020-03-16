@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+
+.nav-items {
+    float:right;
+    margin: 0;
+}
+.nav-item{
+    list-style: none;
+    display: inline;
+}
+
+nav {
+    margin: 1rem;
+    background-color: gray;
+}
+.nav-logo{
+    text-decoration: none;
+    color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.cover{
+    height: 500px;
+    /* 한줄 텍스트일 때, 수직 가운데 정렬
+    line-height
+    아니면 
+    display:table;
+    width:100%
+    vertical-align:middle;
+    마지막이자 무적의 방법
+    display:flex;
+    justify-content: cneter;
+    align-items:center; */
+    /* flex: container와 자식요소들이 item으로 구성이 되어있음(블록이 아님. 블록의 속성 사라짐) */
+    line-height: 500px;
+    background-image: url('images/bicycles.jpg');
+    background-size: cover;
+    text-align: center;
+}
+.cover-title{
+    margin: 0;
+}
+.content{
+    text-align: center;
+}
+.content > img {
+    width: 500px;
+}
