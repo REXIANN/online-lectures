@@ -1,0 +1,77 @@
+/* pdf에 정의된 초기화는 미리 작성 해두었습니다. */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h4 {
+	font-size: 20px;
+	font-weight: bold;
+	font-family: Arial;
+}
+
+p {
+	font-family: Arial;
+}
+/* 아래에 카드 레이아웃을 직접 만들어보세요. */
+
+div {
+	margin : 10px;
+	align-items: center;
+	width: 700px;
+	height: 630px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+}
+
+div > header {
+	/* background image */
+	background-image: url(champs_elysees.jpg);
+  background-size: cover;
+	background-repeat: no-repeat;	
+	background-position: center;
+	/* settings */
+
+	margin: 18px;
+	width: 664px;
+	height: 450px;
+}
+div > header > p {
+	content: "";
+	padding-bottom: 420px;
+}
+.logo {
+	text-align: center;
+	height: 30px;
+	background-color: rgba(48, 48, 48, 0.7);
+	color: white;
+}
+/* 섹션 */
+div > section {
+	padding-left: 18px;
+	padding-right: 18px;
+}
+
+div > section > hr {
+	padding-bottom: 5px;
+}
+
+div > section > p {
+	padding: 4px;
+	background-color: #f9cba2;
+}
+/* 푸터 */
+body > div > footer {
+	position: absolute;
+	
+	padding: 18px;
+	width: 100%;
+	max-width: 700px;
+}
+
+body > div > footer > p {
+	background-color: rgba(128, 128, 128, 0.7);
+	color: black;
+}
