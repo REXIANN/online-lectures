@@ -1,0 +1,39 @@
+/* 아래애 자유롭게 꾸며 주세요! */
+body {
+  width: 500px;
+  height: 500px;
+  margin: 10px;
+  border: 2px solid black;
+  background-color: wheat;
+
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+form > input {
+  width: 100%;
+  height: 20px;
+  font-size: 16px;
+  background-color: turquoise;
+}
+form > h4 {
+  margin-bottom: 2px;
+}
+form > p {
+  margin-top: 2px;
+  font-size: 12px;
+  color: gray;
+}
+
+form > button {
+  width: 100%;
+  height: 20px;
+  background-color: violet;
+  border-color: purple;
+}
+.title {
+  text-align: center;
+}

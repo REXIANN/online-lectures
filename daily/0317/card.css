@@ -58,6 +58,10 @@ div > section > hr {
 	padding-bottom: 5px;
 }
 
+div > section > span > h4 {
+	width: 400px;
+}
+
 div > section > p {
 	padding: 4px;
 	background-color: #f9cba2;
