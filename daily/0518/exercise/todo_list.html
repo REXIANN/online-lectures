@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0518 exercise & workshop</title>
+</head>
+<body>
+  <h2>Add New Todo</h2>
+  <div id="addNewTodo"></div>
+  <hr>
+
+  <h2>Todo List</h2>
+  <ul id="toDo"></ul>
+  <hr>
+
+  <h2>Completed Tasks</h2>
+  <ul></ul>
+  <hr>
+
+  <script>
+    // 여기에 코드를 작성하시오.
+    // 1. form태그 생성하기
+    const form = document.createElement('form')
+    const label = document.createElement('label')
+    label.innerText = 'Add New Todo:'
+    form.appendChild(label)
+    
+    const input = document.createElement('input')
+    input.setAttribute('type', 'text')
+    form.appendChild(input)
+    
+    const button = document.createElement('button')
+    button.innerText = 'Add'
+    form.appendChild(button)
+    
+    const newTodo = document.querySelector('#addNewTodo')
+    newTodo.appendChild(form)
+
+    // 2. TodoList
+    function createTodoList(labelText) {
+      const todo = document.createElement('li')
+      const checkbox = document.createElement('input')
+      checkbox.setAttribute('type', 'checkbox')
+      
+      const label1 = document.createElement('label')
+      label1.innerText = labelText
+
+      const input1 = document.createElement('input')
+      input1.setAttribute('type', 'text')
+
+      const editButton = document.createElement('button')
+      editButton.innerText = 'Edit'
+
+      const delButton = document.createElement('button')
+      delButton.innerText = 'Delete'
+
+      todo.append(checkbox, label1, input1, editButton, delButton)
+
+      const text = document.querySelector('#toDo')
+      text.appendChild(todo)
+      // return text
+    }
+    const todoList = document.querySelector('#toDo')
+    const labelArray = ['Django ModelForm복습', 'JS DOM조작 복습', 'Django static, media']
+    
+    labelArray.forEach( text => {
+      const li = createTodoList(text)
+    })
+    // 3. Completed Tasks 
+  </script>
+</body>
+</html>

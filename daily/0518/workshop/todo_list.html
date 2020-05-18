@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0518 exercise & workshop</title>
+</head>
+<body>
+  <h2>Add New Todo</h2>
+  <div id="addNewTodo"></div>
+  <hr>
+
+  <h2>Todo List</h2>
+  <ul id="toDo"></ul>
+  <hr>
+
+  <h2>Completed Tasks</h2>
+  <ul id="completedList"></ul>
+  <hr>
+
+  <script>
+    // 여기에 코드를 작성하시오.
+    // 1. form태그 생성하기
+    const form = document.createElement('form')
+    const label = document.createElement('label')
+    label.innerText = 'Add New Todo:'
+    form.appendChild(label)
+    
+    const input = document.createElement('input')
+    input.setAttribute('type', 'text')
+    input.id = 'inputId'
+    form.appendChild(input)
+    
+    const button = document.createElement('button')
+    button.innerText = 'Add'
+    button.id = 'ButtonId'
+    form.appendChild(button)
+    
+    const newTodo = document.querySelector('#addNewTodo')
+    newTodo.appendChild(form)
+
+    // 2. TodoList
+    function createTodoList(labelText) {
+      const todo = document.createElement('li')
+      const checkbox = document.createElement('input')      
+      checkbox.setAttribute('type', 'checkbox')
+      // 체크박스 사용시 행동 정의
+      checkbox.addEventListener('change', function (target) {
+        // 만일 체크가 되었다면
+        if (event.target.checked) {
+          // 취소선 긋기
+          label1.style.textDecoration = 'line-through'
+          // completedList에 해당 todo를 붙인다.
+          const completedList = document.querySelector('#completedList')
+          completedList.appendChild(todo)
+
+        } else {
+          // 체크가 해제되면 취소선을 없애고
+          label1.style.textDecoration = ''
+          // todoList에 붙인다.
+          const todoList = document.querySelector('#toDo')
+          todoList.appendChild(todo)
+        }
+      })
+      
+      const label1 = document.createElement('label')
+      label1.innerText = labelText
+
+      const input1 = document.createElement('input')
+      input1.setAttribute('type', 'text')
+
+      const editButton = document.createElement('button')
+      editButton.innerText = 'Edit'
+      editButton.addEventListener('click', function (event) {
+        // form의 원래 동작을 막는다.
+        event.preventDefault()
+        // 고치자.
+        label1.innerText = input1.value
+        // 값이 제출되었으면 변경
+        input1.value = ''
+      })
+
+      const delButton = document.createElement('button')
+      delButton.innerText = 'Delete'
+      delButton.addEventListener('click', function (event) {
+        event.preventDefault()
+        // 삭제
+        todo.remove()
+      })
+      todo.append(checkbox, label1, input1, editButton, delButton)
+
+      const text = document.querySelector('#toDo')
+      text.appendChild(todo)
+      // return text
+    }
+    const myButton = document.querySelector('#ButtonId')
+    myButton.addEventListener('click', function(event) {
+      event.preventDefault()
+      const myText = document.querySelector('#inputId')
+      createTodoList(myText.value)
+      myText.value = null
+    })
+    // const labelArray = ['Django ModelForm복습', 'JS DOM조작 복습', 'Django static, media']
+    // labelArray.forEach( text => {
+    //   const li = createTodoList(text)
+    // })
+    // 3. Completed Tasks 
+
+  </script>
+</body>
+</html>
