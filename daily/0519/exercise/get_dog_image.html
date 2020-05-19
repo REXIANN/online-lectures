@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>exercise</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>Dog Image(s)</h1>
+  <hr>
+
+  <h2>강아지</h2>
+  <button id="cat">고우양이</button>
+  <button id="dog">강아지</button>
+  <div class="dogs"></div>
+
+  <script>
+    // 여기에 코드를 작성하시오.
+    // 1. 이벤트리스너 - 기명함수
+    const getDogImage = function() {
+      axios.get('https://dog.ceo/api/breeds/image/random')
+        .then(response => {
+          const URL = response.data.message
+          // img 태그 생성
+          const dogImage = document.createElement('img')
+          // img 태그의 속성 값 넣기
+          dogImage.src = URL
+          dogImage.style.height = '300px'
+          // 완성된 img 를 넣음
+          document.querySelector('.dogs').append(dogImage)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+    const button = document.querySelector('#dog')
+    button.addEventListener('click', getDogImage)
+  
+    // 2. 이벤트리스너 - 익명함수
+    // const button = document.querySelector('#dog')
+    // button.addEventListener('click', function() {
+    //   axios.get('https://dog.ceo/api/breeds/image/random')
+    //     .then(response => {
+    //       const URL = response.data.message
+    //       // img 태그 생성
+    //       const dogImage = document.createElement('img')
+    //       // img 태그의 속성 값 넣기
+    //       dogImage.src = URL
+    //       dogImage.style.height = '300px'
+    //       // 완성된 img 를 넣음
+    //       document.querySelector('.dogs').append(dogImage)
+    //     })
+    //     .catch(error => {
+    //       console.log(error)
+    //     })
+    // })
+    
+    // 도전과제. 고양이만들기
+    const catButton = document.querySelector('#cat')
+    catButton.addEventListener('click', function() {
+      axios.get('https://api.thecatapi.com/v1/images/search')
+        .then(response => {
+          const URL = response.data[0].url
+          // img 태그 생성
+          const catImage = document.createElement('img')
+          // img 태그의 속성 값 넣기
+          catImage.src = URL
+          catImage.style.height = '300px'
+          // 완성된 img 를 넣음
+          document.querySelector('.dogs').append(catImage)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    })
+  </script>
+</body>
+</html>
