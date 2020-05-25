@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+    <button @click="getCatImage">나와라 고양이!</button>
+    <img v-bind:src="catImg" alt="catImage">
+  </div>
+  <!-- Vuejs CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- 스크립트 작성 -->
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello',
+        catImg: '',
+        catImageUrl: 'https://api.thecatapi.com/v1/images/search',
+      },
+      methods: {
+        getCatImage: function() {
+          axios.get(this.catImageUrl)
+            .then(function (response) {
+              console.log(this)
+              this.catImg = response.data[0].url
+            })   
+        }
+      }
+    })
+  </script>
+</body>
+</html>
